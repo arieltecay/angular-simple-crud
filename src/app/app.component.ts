@@ -12,4 +12,6 @@ export class AppComponent {
     {id: 2, name: 'Alfio Basile', posicion: 'defensor'},
     {id: 3, name: 'Humberto Maschio', posicion: 'defensor'}
   ];
+
+  selectedPlayer: Players = new Players(); /* Va a comenzar dando un jugador en blanco */
 }
