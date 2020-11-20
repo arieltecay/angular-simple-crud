@@ -5,19 +5,9 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-5">
+    <div class="col-md-8 mt-2">
       <h1>Jugadores de Racing</h1>
-      <ul class="list-group">
-        <li 
-        (click) = "openForEdit(jugador)"
-        *ngFor="let jugador of playerFootball" 
-        class="list-group-item list-group-item-action"
-        [class.active] = "jugador == selectedPlayer"
-        >
-          <span class="badge badge-primary"> {{jugador.id}} </span>{{jugador.name}} - {{jugador.posicion}}
-        </li>
-      </ul>
-      <div class="card mt-4">
+      <div class="card mt-2">
         <div class="card-body">
           <div class="class-title">
             Inserta un nuevo Jugador
@@ -32,16 +22,20 @@
             <button (click)="agregarOEditarJugador()" class="btn btn-primary">
               Agregar
             </button>
-            <button class="btn btn-danger"
-            *ngIf="selectedPlayer.id !== 0"
-            (click) = "delete()"
-            >
+            <button class="btn btn-danger" *ngIf="selectedPlayer.id !== 0" (click)="delete()">
               Borrar
             </button>
           </div>
         </div>
 
-      </div>
+      </div >
+      <ul class="list-group mt-2">
+        <li (click)="openForEdit(jugador)" *ngFor="let jugador of playerFootball"
+          class="list-group-item list-group-item-action" [class.active]="jugador == selectedPlayer">
+          <span class="badge badge-primary"> {{jugador.id}} </span>{{jugador.name}} - {{jugador.posicion}}
+        </li>
+      </ul>
+
     </div>
     <div class="col-md-4">
       <img src="https://i.pinimg.com/originals/37/d5/ba/37d5ba39cdd1811d7f36c4ade7efa73c.png" width=300 alt="">
