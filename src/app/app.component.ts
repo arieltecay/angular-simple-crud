@@ -26,6 +26,10 @@ export class AppComponent {
     this.selectedPlayer = new Players();
   }
 
-  delete(): void{
+  delete(): void {
+    if (confirm('Quieres Eliminarlo')) {
+      this.playerFootball = this.playerFootball.filter(x => x !== this.selectedPlayer);
+      this.selectedPlayer = new Players();
+    }
   }
 }
